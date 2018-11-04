@@ -1,5 +1,5 @@
 @extends('back.layouts.app')
 
 @section('content')
-Test
+    @include('back.modules.partials.form')
 @endsection

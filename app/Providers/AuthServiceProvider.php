@@ -1,6 +1,6 @@
 <?php
 
-namespace Memes\Providers;
+namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'Memes\Models\User' => 'Memes\Policies\AdminPolicy',
+        'App\Models\User' => 'App\Policies\AdminPolicy',
     ];
 
     /**
@@ -25,6 +25,6 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Gate::define('view-admin', 'Memes\Policies\AdminPolicy@viewAdmin');
+        Gate::define('view-admin', 'App\Policies\AdminPolicy@viewAdmin');
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Memes\Policies;
+namespace App\Policies;
 
-use Memes\Models\User;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class AdminPolicy

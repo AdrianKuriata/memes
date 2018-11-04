@@ -1,0 +1,18 @@
+body {
+    font-family: Tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+main {
+    padding: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+    @extend .shadow;
+}
+
+.close {
+    font-size: 16px;
+}
