@@ -124,7 +124,7 @@ class BaseField {
         return $this;
     }
 
-    private function getColumns()
+    protected function getColumns()
     {
         if ($this->columns) {
             return $this->columns;
@@ -155,7 +155,7 @@ class BaseField {
         return $column;
     }
 
-    private function formatNameLabel()
+    protected function formatNameLabel()
     {
         return ucfirst($this->name);
     }

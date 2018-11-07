@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Contracts\ModuleInterface;
 
 use App\Fields\Column;
+use App\Fields\FileField;
 use App\Fields\TextField;
 use App\Fields\ColumnSend;
 use App\Fields\EmailField;
@@ -51,8 +52,8 @@ class User extends Authenticatable implements MustVerifyEmail, ModuleInterface
     public function getForm($item = null)
     {
         $fields = [
-            (new TextField)->name('name')->value($item->name?? null)->label(__('Nazwa użytkownika'))->placeholder(__('Wprowadź imię'))->class('form-control')->column(4)->render(), // Text field name
-            (new EmailField)->name('email')->value($item->email?? null)->column(8)->label(__('Adres e-mail'))->placeholder(__('Wprowadź adres e-mail'))->class('form-control')->render() // Email field email
+            (new TextField)->name('name[test]')->value($item->name?? null)->label(__('Nazwa użytkownika'))->placeholder(__('Wprowadź imię'))->class('form-control')->column(6)->render(), // Text field name
+            (new EmailField)->name('email')->value($item->email?? null)->column(6)->label(__('Adres e-mail'))->placeholder(__('Wprowadź adres e-mail'))->class('form-control')->render(), // Email field email
         ];
 
         return [
@@ -64,7 +65,7 @@ class User extends Authenticatable implements MustVerifyEmail, ModuleInterface
     public function getRules()
     {
         return [
-            'name' => 'required|min:2|max:32',
+            'name.test' => 'required|min:2|max:32',
             'email' => 'required|min:5|max:32|unique:users,email'
         ];
     }

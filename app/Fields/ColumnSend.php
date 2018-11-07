@@ -24,7 +24,7 @@ class ColumnSend
                         '. ucfirst($this->name) .'
                     </div>
                     <div class="card-body">
-                        '. FormFacade::submit(__('Wyślij'), ['class' => 'btn btn-primary btn-block']) .'
+                        <button type="submit" class="btn btn-primary btn-block">'. __('Wyślij') .'</button>
                     </div>
                 </div>
             </div>
